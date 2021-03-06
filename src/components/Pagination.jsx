@@ -56,7 +56,7 @@ color: black;
 float: left;
 width:30px;
 height: 30px;
-line-height: 30px;
+line-height: 33px;
 text-decoration: none;
 background-color: #FF5956;
 border-radius:1000px;
