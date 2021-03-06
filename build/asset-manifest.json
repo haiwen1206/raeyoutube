@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.486f1c86.chunk.css",
+    "main.js": "/static/js/main.e8939019.chunk.js",
+    "main.js.map": "/static/js/main.e8939019.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f98c8953.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f98c8953.js.map",
+    "static/js/2.275fce10.chunk.js": "/static/js/2.275fce10.chunk.js",
+    "static/js/2.275fce10.chunk.js.map": "/static/js/2.275fce10.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.830fa354a547f97a9cae204d75a20c4a.js": "/precache-manifest.830fa354a547f97a9cae204d75a20c4a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.486f1c86.chunk.css.map": "/static/css/main.486f1c86.chunk.css.map",
+    "static/js/2.275fce10.chunk.js.LICENSE.txt": "/static/js/2.275fce10.chunk.js.LICENSE.txt",
+    "static/media/Food.webp": "/static/media/Food.4748c0e8.webp",
+    "static/media/airplane.jpg": "/static/media/airplane.00d4f489.jpg",
+    "static/media/arrow.f5027015.svg": "/static/media/arrow.f5027015.svg",
+    "static/media/bus.jpeg": "/static/media/bus.937431c6.jpeg",
+    "static/media/hotel.png": "/static/media/hotel.f3ae220f.png",
+    "static/media/petra.jpg": "/static/media/petra.af101c31.jpg",
+    "static/media/petraSmall.png": "/static/media/petraSmall.2b873f98.png",
+    "static/media/train.jpg": "/static/media/train.b3731c68.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f98c8953.js",
+    "static/js/2.275fce10.chunk.js",
+    "static/css/main.486f1c86.chunk.css",
+    "static/js/main.e8939019.chunk.js"
+  ]
+}
