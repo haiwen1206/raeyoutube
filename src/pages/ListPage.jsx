@@ -23,7 +23,7 @@ const ListPage = ({ tubeData }) => {
     return (
         <div>
             <ContentPage tubeData={tubeData} currentPage={pageConfig.currentPage} />
-            <Pagination tubeData={tubeData} pageConfig={pageConfig} onCatch={(value) => {
+            <Pagination currentPage={pageConfig.currentPage} tubeData={tubeData} pageConfig={pageConfig} onCatch={(value) => {
                 setPageConfig(
                     {
                         currentPage: value,

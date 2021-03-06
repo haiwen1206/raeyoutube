@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Pagination = ({ pageConfig, onCatch }) => {
-
+const Pagination = ({ pageConfig, onCatch, currentPage }) => {
     let pages = []
     const handleClick = (i) => {
         onCatch && onCatch(i);
     }
     for (let i = 1; i <= pageConfig.totalPage; i++) {
-        pages.push(<StyledLi onClick={() => handleClick(i)} key={i}><StyledA href="#">{i}</StyledA></StyledLi>);
+        if (i === currentPage) {
+            pages.push(<StyledLi onClick={() => handleClick(i)} key={i}><StyledActiveA href="#">{i}</StyledActiveA></StyledLi>);
+        } else {
+            pages.push(<StyledLi onClick={() => handleClick(i)} key={i}><StyledA href="#">{i}</StyledA></StyledLi>);
+        }
     }
 
     if (pageConfig.totalPage < 3) {
@@ -40,10 +43,15 @@ color: black;
 float: left;
 padding: 8px 16px;
 text-decoration: none;
-&:active{
-     background-color: #4CAF50;
-     color: white;
-    }
+`;
+
+const StyledActiveA = styled.a`
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+background-color: #4CAF50;
+color: white;
 `;
 
 const StyledInvalidLi = styled.li`
