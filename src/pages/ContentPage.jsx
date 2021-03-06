@@ -6,7 +6,8 @@ const ContentPage = ({ tubeData, currentPage }) => {
     return (
         <div>
             {renderData && renderData.map((tubeData, index) => {
-                const url = 'https://www.youtube.com/watch?v=' + `${tubeData.id.videoId}`;
+                let url = 'https://www.youtube.com/watch?v=' + `${tubeData.id.videoId}`;
+                if (!tubeData.id.videoId) url = 'https://www.youtube.com/watch?v=c91bNchSC5Q&list=' + `${tubeData.id.playlistId}`;
                 return (
                     <a href={url} target="_blank"> <img key={index} src={tubeData.snippet.thumbnails.high.url} alt="" key={index} /></a>
                 );
