@@ -54,9 +54,12 @@ text-decoration: none;
 const StyledActiveA = styled.a`
 color: black;
 float: left;
-padding: 8px 16px;
+width:30px;
+height: 30px;
+line-height: 30px;
 text-decoration: none;
-background-color: #4CAF50;
+background-color: #FF5956;
+border-radius:1000px;
 color: white;
 `;
 
