@@ -20,13 +20,19 @@ const Pagination = ({ pageConfig, onCatch, currentPage }) => {
         }
     }
     return (
-        <div>
+        <StyledDiv>
             <StyledUL>
                 {pages}
             </StyledUL>
-        </div>
+        </StyledDiv>
     )
 };
+
+const StyledDiv = styled.div`
+width: 100%;
+margin-top:50px;
+margin-bottom:50px;
+`;
 
 const StyledUL = styled.ul`
 display: inline-block;

@@ -29,7 +29,7 @@ const HomePage = () => {
     };
     return (
         <StyledDiv>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <StyledForm onSubmit={handleSubmit(onSubmit)}>
                 <input
                     type="text"
                     placeholder="請輸入搜尋字"
@@ -44,14 +44,19 @@ const HomePage = () => {
                 >
                     送出
                 </button>
-            </form>
+            </StyledForm>
             <ListPage tubeData={tubeData} />
         </StyledDiv>
     );
 };
 const StyledDiv = styled.div`
           width: 100%;
-          margin-top:100px;
-        `;
+          margin-top:50px;
+ `;
+
+const StyledForm = styled.form`
+width:50%;
+margin:50px auto;
+`;
 
 export default HomePage;

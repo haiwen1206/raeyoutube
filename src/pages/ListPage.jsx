@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
-import Pagination from "./../components/Pagination";
+import Pagination from "../components/Pagination";
 import ContentPage from "./ContentPage";
 
 const ListPage = ({ tubeData }) => {
@@ -35,5 +35,6 @@ const ListPage = ({ tubeData }) => {
         </div>
     );
 };
+
 
 export default ListPage;
