@@ -50,13 +50,14 @@ const HomePage = () => {
     );
 };
 const StyledDiv = styled.div`
-          width: 100%;
-          margin-top:50px;
+width: 100%;
  `;
 
 const StyledForm = styled.form`
-width:50%;
-margin:50px auto;
+width:90.7%;
+height: 100px;
+margin:10px auto;
+background-color: #FF5956;
 `;
 
 export default HomePage;
