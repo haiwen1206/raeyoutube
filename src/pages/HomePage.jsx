@@ -8,10 +8,10 @@ import Search from "../image/search.png";
 const HomePage = () => {
     const [search, setSearch] = useState("");
     const [tubeData, setTubeData] = useState("");
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        const YOUR_API_KEY = 'AIzaSyCweQnhnhrFXc8_op1fQi38ganfGWnC3AA';
+        const YOUR_API_KEY = 'AIzaSyDTeV11KkECv_Kt09X8Z0JKHgCLMdYdURk';
         axios.get('https://www.googleapis.com/youtube/v3/search', {
             params: {
                 part: 'snippet',

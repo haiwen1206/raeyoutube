@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const ContentPage = ({ tubeData, currentPage }) => {
@@ -9,7 +9,7 @@ const ContentPage = ({ tubeData, currentPage }) => {
                 let url = 'https://www.youtube.com/watch?v=' + `${tubeData.id.videoId}`;
                 if (!tubeData.id.videoId) url = 'https://www.youtube.com/watch?v=c91bNchSC5Q&list=' + `${tubeData.id.playlistId}`;
                 return (
-                    <a href={url} target="_blank"> <StyledImg key={index} src={tubeData.snippet.thumbnails.high.url} alt="" key={index} /></a>
+                    <a href={url} target="_blank" rel="noreferrer" key={index}> <StyledImg key={index} src={tubeData.snippet.thumbnails.high.url} alt="" key={index} /></a>
                 );
             })}
         </div>

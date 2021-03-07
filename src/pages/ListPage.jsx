@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 import Pagination from "../components/Pagination";
 import ContentPage from "./ContentPage";
 
