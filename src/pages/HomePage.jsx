@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import ListPage from "./ListPage";
+import Search from "../image/search.png";
 
 const HomePage = () => {
     const [search, setSearch] = useState("");
@@ -29,21 +30,23 @@ const HomePage = () => {
     };
     return (
         <StyledDiv>
-            <StyledForm onSubmit={handleSubmit(onSubmit)}>
-                <input
+            <StyledForm onSubmit={handleSubmit(onSubmit)} autocomplete="off">
+                <StyledInput
                     type="text"
-                    placeholder="請輸入搜尋字"
+                    placeholder=""
                     onChange={(e) => setSearch(e.target.value)}
                     value={search}
                     ref={register}
                     required="required"
                     name="search" />
-                <button
-                    type="submit"
-                    value="Submit"
-                >
-                    送出
-                </button>
+                <StyledBorderDiv>
+                    <StyledButton
+                        type="submit"
+                        value="Submit"
+                    >
+                        <StyledImg src={Search} alt="" />
+                    </StyledButton>
+                </StyledBorderDiv>
             </StyledForm>
             <ListPage tubeData={tubeData} />
         </StyledDiv>
@@ -58,6 +61,70 @@ width:90.7%;
 height: 100px;
 margin:10px auto;
 background-color: #FF5956;
+padding-top: 50px;
+`;
+
+const StyledInput = styled.input`
+vertical-align:middle;
+background-color: #FF5956;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+border-color: white;
+color: white;
+:focus{
+    outline:none;
+}
+:-webkit-autofill {
+     background-color: transparent!important;
+     background-image: none !important;
+     color: white !important;
+     -webkit-box-shadow: 0 0 0px 100px #FF5956 inset !important; 
+     -webkit-text-fill-color: #fff !important;
+ }
+
+@media (max-width: 978px) {
+    font-size: 20px;
+    width:60%;
+}
+@media (min-width: 980px) {
+    font-size: 30px;
+    width:40%;
+}
+`;
+
+const StyledButton = styled.button`
+-webkit-box-shadow: none;
+background-color: transparent;
+vertical-align:middle;
+outline:none;
+border:none;
+:focus{
+    outline:none;
+}
+`;
+
+const StyledImg = styled.img`
+@media (max-width: 978px) {
+    width:20px;
+}
+@media (min-width: 980px) {
+    width:30px;
+}
+`;
+
+const StyledBorderDiv = styled.div`
+border:white;
+display:inline;
+border-color:white;
+border-width: 0px;
+border-bottom-width: 2px;
+border-style:solid;
+padding: 10px;
+vertical-align:middle;
+@media (max-width: 978px) {
+    padding: 4px;
+}
 `;
 
 export default HomePage;
