@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ContentPage = ({ tubeData, currentPage }) => {
-    let renderData = tubeData.slice(10 * (currentPage - 1), 10 * currentPage);
+    let renderData = tubeData && tubeData.slice(10 * (currentPage - 1), 10 * currentPage);
     return (
         <div>
             {renderData && renderData.map((tubeData, index) => {

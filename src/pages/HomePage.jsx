@@ -4,30 +4,50 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import ListPage from "./ListPage";
 import Search from "../image/search.png";
+import { useSelector, useDispatch } from "react-redux";
 
 const HomePage = () => {
     const [search, setSearch] = useState("");
     const [tubeData, setTubeData] = useState("");
     const { register, handleSubmit } = useForm();
 
+    const dispatch = useDispatch();
+    const cacheData = useSelector((state) => state);
+
     const onSubmit = (data) => {
-        const YOUR_API_KEY = 'AIzaSyDTeV11KkECv_Kt09X8Z0JKHgCLMdYdURk';
-        axios.get('https://www.googleapis.com/youtube/v3/search', {
-            params: {
-                part: 'snippet',
-                q: data,
-                maxResults: 50,
-                key: YOUR_API_KEY,
-            }
-        })
-            .then(function (response) {
-                console.log("成功", response.data.items);
-                setTubeData(response.data.items);
+        const result = cacheData.filter(element => element.cacheWord === data.search);
+        if (result.length !== 0) {
+            setTubeData(result[0] && result[0].cacheItem);
+        }
+        if (result.length === 0) {
+            console.log('callAPI');
+            const YOUR_API_KEY = 'AIzaSyDTeV11KkECv_Kt09X8Z0JKHgCLMdYdURk';
+            axios.get('https://www.googleapis.com/youtube/v3/search', {
+                params: {
+                    part: 'snippet',
+                    q: data,
+                    maxResults: 50,
+                    key: YOUR_API_KEY,
+                }
             })
-            .catch(function (error) {
-                console.log("失敗", error);
-            });
+                .then(function (response) {
+                    console.log("成功", response.data.items);
+                    setTubeData(response.data.items);
+                    dispatch({
+                        type: "SAVE_CACHE_DATA",
+                        payload: {
+                            cacheWord: data.search,
+                            cacheItem: response.data.items
+                        }
+                    })
+                })
+                .catch(function (error) {
+                    console.log("失敗", error);
+                });
+        }
     };
+    // console.log('tubeData', tubeData);
+    // console.log('cacheData', cacheData);
     return (
         <StyledDiv>
             <StyledForm onSubmit={handleSubmit(onSubmit)} autocomplete="off">

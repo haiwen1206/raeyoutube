@@ -14,7 +14,7 @@ const ListPage = ({ tubeData }) => {
             {
                 currentPage: 1,
                 startPage: 1,
-                totalPage: Math.ceil(tubeData.length / 10)
+                totalPage: Math.ceil(tubeData && tubeData.length / 10)
             }
         );
     }, [tubeData]);
